@@ -1,0 +1,58 @@
+<!DOCType html>
+<html class="dark" id="html-el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../dist/output.css" rel="stylesheet">
+  <title>Chrovo's Website</title>
+  <script src="script.js"></script>
+</head>
+<body class="bg-white dark:bg-neutral-800" id="bodyId">
+  <!--top -->
+  <div class="flex justify-between">
+    <!--top left corner-->
+    <div class="flex flex-row">
+      <div class="dark:text-white text-black">Chrovo</div>
+      <div class="dark:text-white text-black ml-4">C</div>
+    </div>
+
+    <!--top right corner-->
+    <div class="flex flex-row">
+      <!--Switch button for dark mode-->
+      <div class="bg-gray-200 h-6 w-11 border-2 rounded-full cursor-pointer transition-colors ease-in-out duration-200" id="darkMode-btn" onclick="changeColorMode()">
+        <span id="dm-dot" class="translate-x-5 pointer-events-none transform ring-0 inline-block h-5 w-5 rounded-full bg-white shadow transition ease-in-out duration-200"></span>
+      </div>
+
+      <div class="dark:text-white text-black ml-4 mr-4">
+        IMG
+      </div>
+
+      <div class="dark:text-white text-black">
+        Menu
+      </div>
+
+    </div>
+  </div>
+
+    <!--Bottom section.-->
+    <div class="flex justify-between items-center">
+      <div class="ml-32 mt-10"> <!--mt-64-->
+
+        <!--Text-->
+        <h1 class="dark:text-white text-black text-5xl w-96"> <!--mt-10-->
+          Hello World! I am Chrovo.
+        </h1>
+        <p class="dark:text-white text-black w-96 py-5 text-lg">
+          I am a 14 year old developer who loves coding, 
+          mathematics, psychology, and neuroscience.
+        </p>
+      <!--the two buttons-->
+      <button class="text-white bg-black rounded-sm py-4 px-8 dark:text-black dark:bg-white text-lg mt-8 ml-5 shadow-xl ring-1 ring-gray-900/5 sm:rounded-lg">Skills</button>
+      <button class="text-black bg-white dark:text-white dark:bg-black rounded-sm py-4 px-8 text-lg ml-3 shadow-xl ring-1 ring-gray-900/5 sm:rounded-lg">About Me</button>
+      </div>
+
+      <!--the computer image-->
+      <img src="../Images/ComputerMain.png" class="bg-neutral-900 rounded-full h-1/2 w-1/2 mr-10 mt-10"> <!--ml-96-->
+    </div>
+</body>
+</html>
