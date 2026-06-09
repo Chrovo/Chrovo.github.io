@@ -1,58 +1,184 @@
-<!DOCType html>
-<html class="dark" id="html-el">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./dist/output.css" rel="stylesheet">
-  <title>Chrovo's Website</title>
-  <script src="script.js"></script>
+  <title>Mohammad Sadiq</title>
+  <style>
+
+    /* =============================================================
+       TOKENS — edit colors & font here
+       ============================================================= */
+    :root {
+      --bg:   #EDE8DF;   /* Swiss coffee */
+      --text: #111111;
+      --dim:  #837b72;
+
+      /* Claude's chat-response serif is Anthropic's proprietary
+         "Tiempos Text" / "Copernicus" (cannot be legally embedded on a
+         public site). Listed first so it renders exactly on any machine
+         that has them; falls back to system serifs that match closely. */
+      --font: "Tiempos Text", "Copernicus", "Charter", Charter, Georgia,
+              "Times New Roman", Times, serif;
+    }
+
+
+    /* =============================================================
+       BASE
+       ============================================================= */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 70px 28px 120px;
+    }
+
+
+    /* =============================================================
+       NAV — lowercase text links, no shapes
+       ============================================================= */
+    nav {
+      margin-bottom: 60px;
+    }
+
+    nav a {
+      color: var(--dim);
+      text-decoration: none;
+      margin-right: 26px;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    nav a:hover   { color: var(--text); }
+    nav a.active  { color: var(--text); }
+
+
+    /* =============================================================
+       SECTIONS — only one visible at a time, paragraphs only
+       ============================================================= */
+    section { display: none; }
+    section.active { display: block; }
+
+    p { margin-bottom: 1.4em; }
+
+    p:last-child { margin-bottom: 0; }
+
+    a.out {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+  </style>
 </head>
-<body class="bg-white dark:bg-neutral-800" id="bodyId">
-  <!--top -->
-  <div class="flex justify-between mt-3">
-    <!--top left corner-->
-    <div class="flex flex-row">
-      <div class="dark:text-white text-black ml-3">Chrovo</div>
-      <div class="text-white bg-black ml-4 py-1 px-3 rounded-full">C</div>
-    </div>
+<body>
 
-    <!--top right corner-->
-    <div class="flex flex-row">
-      <!--Switch button for dark mode-->
-      <div class="bg-gray-300 h-6 w-11 border-2 rounded-full cursor-pointer transition-colors ease-in-out duration-200" id="darkMode-btn" onclick="changeColorMode()">
-        <div id="dm-dot" class="translate-x-5 pointer-events-none transform ring-0 inline-block h-5 w-5 rounded-full bg-white shadow transition ease-in-out duration-200"></div>
-      </div>
+  <!-- ============================================================
+       NAV
+       ============================================================ -->
+  <nav>
+    <a data-target="about" class="active">about</a>
+    <a data-target="experience">experience</a>
+    <a data-target="projects">projects</a>
+  </nav>
 
-      <!--Menu thing-->
-      <span class="dark:text-white text-black ml-4 mr-2">Menu</span>
-      <b class="flex flex-col w-10 ml-5 mt-1 cursor-pointer hover:space-y-2 transition-all">
-          <i class="dark:bg-white bg-black mr-3 h-1"></i>
-          <i class="dark:bg-white bg-black mr-3 mt-1 mb-1 h-1"></i>
-          <i class="dark:bg-white bg-black mr-3 h-1"></i>
-      </b>
 
-    </div>
-  </div>
+  <!-- ============================================================
+       ABOUT  — edit the paragraphs below
+       ============================================================ -->
+  <section id="about" class="active">
+    <p>
+      hey! i'm <b>mohammad sadiq</b>, a computer science major and mathematics minor at the
+      <b>university of maryland, college park</b>.
+    </p>
+    <p>
+      i'm interested in ai/ml infrastructure, high performance computing, distributed systems, and low level programming.
+      i love building at hackathons and competing in codeforces contests (though i'm only a beginner).
+    </p>
+    <p>in my free time, i like going to the gym, hanging out with friends, and watching anime.</p>
+    <p>feel free to reach out! i'm always down to chat :)</p>
+    <p>
+      links:
+      <a class="out" target="_blank" href="https://devpost.com/chrovo1" target="_blank" rel="noopener">devpost</a>,
+      <a class="out" target="_blank" href="https://github.com/Chrovo" target="_blank" rel="noopener">github</a>, 
+      <a class="out" target="_blank" href="https://www.linkedin.com/in/mohammad-h-sadiq" target="_blank" rel="noopener">linkedin</a>,
+      <a class="out" target="_blank" href="https://x.com/Chrovo_">x</a>
+    </p>
+    <p>
+      email: <a class="out" target="_blank" href="mailto:sadiq.mohammad5678@gmail.com">sadiq.mohammad5678@gmail.com</a>
+    </p>
+  </section>
 
-    <!--Bottom section.-->
-    <div class="flex justify-between items-center">
-      <div class="ml-32 mt-10"> <!--mt-64-->
 
-        <!--Text-->
-        <h1 class="dark:text-white text-black text-5xl w-96"> <!--mt-10-->
-          Hello World! I am Chrovo.
-        </h1>
-        <p class="dark:text-white text-black w-96 py-5 text-lg">
-          I am a 14 year old developer who loves coding, 
-          mathematics, psychology, and neuroscience.
-        </p>
-      <!--the two buttons-->
-      <button class="text-white bg-black rounded-sm py-4 px-8 dark:text-black dark:bg-white text-lg mt-8 ml-5 shadow-xl ring-1 ring-gray-900/5 sm:rounded-lg">Skills</button>
-      <button class="text-black bg-white dark:text-white border border-gray-300 dark:border-0 dark:bg-black rounded-sm py-4 px-8 text-lg ml-3 shadow-xl ring-1 ring-gray-900/5 sm:rounded-lg">About Me</button>
-      </div>
+  <!-- ============================================================
+       EXPERIENCE  — edit the paragraphs below
+       ============================================================ -->
+  <section id="experience">
+    <p>
+      i'm currently at <b><a class="out" target="_blank" href="https://ironsite.ai/">Ironsite AI</a></b> in San Francisco as an infrastructure engineer intern.
+    </p>
+    <p>
+      in my spring 2026 semester, i contracted for <b><a class="out" target="_blank" href="https://www.mitsubishielectric.com/en/">Mitsubishi Electric</a></b>,
+      creating an app that connects customers to drivers to ease the package return process.
+    </p>
+    <p>
+      last summer, i interned at <b><a class="out" target="_blank" href="https://www.bloomberg.com">Bloomberg L.P.</a></b> as a software engineer intern in the New York City Metropolitan Area,
+      where i designed a framework to automate recurring ticket issues for Bloomberg's internal ticketing system.
+    </p>
+    <p>
+      for nearly four years, i was running <b><a class="out" target="_blank" href="https://www.code4tomorrow.org">Code 4 Tomorrow</a></b>,
+      a 501(c)(3) nonprofit dedicated to providing free coding classes to kids. i've
+      been a python data structures & algorithms teacher, a project lead for a discord bot that manages the server,
+      the classes director, and the vice president.
+    </p>
+    <p>
+      i was the lead programmer for <b><a class="out" target="_blank" href="https://events.vex.com/teams/V5RC/750B">VEX Robotics Team 750B</a></b>. during my time there, we won
+      17 state-level awards and qualified twice for the world championship. we also ranked 37th out of
+      12,000+ teams worldwide for robot skills!
+    </p>
+  </section>
 
-      <!--the computer image-->
-      <img src="Images/ComputerMain.png" class="bg-neutral-900 rounded-full h-1/2 w-1/2 mr-10 mt-10"> <!--ml-96-->
-    </div>
+
+  <!-- ============================================================
+       PROJECTS  — edit the paragraphs below
+       ============================================================ -->
+  <section id="projects">
+    <p>
+      <b><a class="out" target="_blank" href="https://devpost.com/software/splatt-72dxb8">Splatt</a></b>
+      is a web app that superimposes egocentric videos into an interactive 3D model of a
+      construction site over time. won $1,000 at the Ironsite x UMD hackathon.
+    </p>
+    <p>
+      <b><a class="out" target="_blank" href="https://devpost.com/software/replay-wq5isz">Replay</a></b> is a position-aware 3D reconstruction and body capture system. won Best App Dev Track at Bitcamp (largest collegiate hackathon in the east coast).
+    </p>
+    <p>
+      <b><a class="out" target="_blank" href="https://youtu.be/jDpSJpZ4rJE?si=IXW_VTz1LPGIVQoj">Scriptify</a></b> is a web app that converts the handwriting of people with dysgraphia into legible
+      files. earned 2nd place at the Congressional App Challenge, NJ District 12.
+    </p>
+  </section>
+
+
+  <!-- ============================================================
+       SCRIPT — switch sections on nav click
+       ============================================================ -->
+  <script>
+    const links = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('section');
+
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        const target = link.dataset.target;
+        links.forEach(l => l.classList.toggle('active', l === link));
+        sections.forEach(s => s.classList.toggle('active', s.id === target));
+      });
+    });
+  </script>
+
 </body>
 </html>
